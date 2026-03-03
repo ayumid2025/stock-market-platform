@@ -6,7 +6,7 @@ from routes.auth import auth_bp
 from routes.stocks import stocks_bp
 from routes.orders import orders_bp
 from routes.portfolio import portfolio_bp
-
+import os
 def create_app():
     app = Flask(__name__, static_folder='../frontend', static_url_path='')
     app.config.from_object(Config)
