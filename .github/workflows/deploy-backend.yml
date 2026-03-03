@@ -1,0 +1,21 @@
+name: Deploy Backend to Heroku
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'backend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deploy to Heroku
+      uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+        heroku_app_name: "your-app-name"  # Replace with your Heroku app name
+        heroku_email: ${{ secrets.HEROKU_EMAIL }}
+        appdir: "backend"
+        procfile: "web: gunicorn app:create_app()"
