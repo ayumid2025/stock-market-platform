@@ -8,3 +8,4 @@ PyJWT==2.8.0
 requests==2.31.0
 gunicorn==21.2.0  # for production
 psycopg2-binary==2.9.9  # if using PostgreSQL
+gunicorn==21.2.0
